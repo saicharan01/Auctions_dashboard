@@ -78,6 +78,9 @@ else:
         current_player=df_player_info[df_player_info['PLAYER_NAME']==random_name]
 
         st.title("Player Info")
+                # Assuming 'image_path' contains the path to your image file
+        #image_path = r"C:\Users\saicharan.madikonda\Desktop\Streamlit_pro\APL_auctions\dummy_image.jpg"
+
         st.image("dummy_image.jpg")
 
         player_name = current_player['PLAYER_NAME'].iloc[0]
@@ -108,26 +111,27 @@ else:
 
         #st.markdown(f"**Base Value of Player is {catogary_value}**")
         to_team=None
-        col5, col6= st.columns(2)
+        col6,col5= st.columns(2)
+        with col6:
+            to_amount = st.number_input("Enter the amount",value=catogary_value,step=100)
         with col5:
-            to_team = st.selectbox("Select the team", team_names, index=0, key=None, placeholder="Choose an option")
-            st.session_state.to_team=to_team
+            to_team = st.selectbox("Select the team", team_names, key=None, placeholder="Choose an option")
+            #st.session_state.to_team=to_team
             # Display the selected team
             #st.write(f"Selected Team: {to_team}")
             
-        with col6:
-            to_amount = st.number_input("Enter the amount",value=catogary_value,step=100)
+        
   
         if st.form_submit_button("Next Player",) and st.session_state.to_team !=None and to_amount != None:
             # st.write(st.session_state.to_team)
             # st.write(to_amount)
 
-            query_insert=f"insert into DB_APL.SH_APL.{st.session_state.to_team} (player_name,batting,bowling,WICKET_KEEPING,CRICHEROS_ID,amount_left ) select player_name,batting,bowling,WICKET_KEEPING,CRICHEROS_ID,{to_amount} from  DB_APL.SH_APL.PLAYERS_INFO where player_name='{random_name}'"        
+            query_insert=f"insert into DB_APL.SH_APL.{to_team} (player_name,batting,bowling,WICKET_KEEPING,CRICHEROS_ID,amount_left ) select player_name,batting,bowling,WICKET_KEEPING,CRICHEROS_ID,{to_amount} from  DB_APL.SH_APL.PLAYERS_INFO where player_name='{random_name}'"        
             query_delete=f"delete from DB_APL.SH_APL.PLAYERS_INFO where player_name='{random_name}'"
             session.sql(query_insert).collect()
             session.sql(query_delete).collect()
-            st.rerun()
             to_team=None
             to_amount=None
-            st.success("Congradulations")
+            st.success("{to_team} bought {player_name} ,Congratulations")
+            st.rerun()
             
