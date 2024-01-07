@@ -93,7 +93,7 @@ else:
         st.markdown(f"**Player Name:** {player_name}", unsafe_allow_html=True)
         st.markdown(f"**Batting:** {batting}", unsafe_allow_html=True)
         st.markdown(f"**Bowling:** {bowling}", unsafe_allow_html=True)
-        st.markdown(f"**Wicket Keeper:** {wicket_keeping}", unsafe_allow_html=True)
+        st.markdown(f"**Wicket Keeping:** {wicket_keeping}", unsafe_allow_html=True)
         st.markdown(f"**Cricherosid:** {cricheros_id}", unsafe_allow_html=True)
         #st.markdown(f"**Category:** {category}", unsafe_allow_html=True)
         
