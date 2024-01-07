@@ -78,7 +78,7 @@ else:
         current_player=df_player_info[df_player_info['PLAYER_NAME']==random_name]
 
         st.title("Player Info")
-        st.image(dummy_image.png)
+        st.image("dummy_image.jpg")
 
         player_name = current_player['PLAYER_NAME'].iloc[0]
         batting = current_player['BATTING'].iloc[0]
