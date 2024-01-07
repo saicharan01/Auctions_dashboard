@@ -117,7 +117,7 @@ else:
             to_team = st.selectbox("Select the team", team_names, index=0, key=None, placeholder="Choose an option")
             st.session_state.to_team=to_team
             # Display the selected team
-            st.write(f"Selected Team: {to_team}")
+            #st.write(f"Selected Team: {to_team}")
             
         with col6:
             to_amount = st.number_input("Enter the amount",value=catogary_value,step=100)
