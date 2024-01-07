@@ -78,11 +78,7 @@ else:
         current_player=df_player_info[df_player_info['PLAYER_NAME']==random_name]
 
         st.title("Player Info")
-                # Assuming 'image_path' contains the path to your image file
-        image_path = r"C:\Users\saicharan.madikonda\Desktop\Streamlit_pro\APL_auctions\dummy_image.png"
-
-        # Display the image
-        st.image(image_path, use_column_width=True)
+        st.image(dummy_image.png)
 
         player_name = current_player['PLAYER_NAME'].iloc[0]
         batting = current_player['BATTING'].iloc[0]
