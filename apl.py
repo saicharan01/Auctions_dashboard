@@ -122,8 +122,8 @@ else:
             
         
   
-        if st.form_submit_button("Next Player",) and st.session_state.to_team !=None and to_amount != None:
-            # st.write(st.session_state.to_team)
+        if st.form_submit_button("Next Player",) and to_team !=None and to_amount != None:
+            # st.write(to_team)
             # st.write(to_amount)
 
             query_insert=f"insert into DB_APL.SH_APL.{to_team} (player_name,batting,bowling,WICKET_KEEPING,CRICHEROS_ID,amount_left ) select player_name,batting,bowling,WICKET_KEEPING,CRICHEROS_ID,{to_amount} from  DB_APL.SH_APL.PLAYERS_INFO where player_name='{random_name}'"        
