@@ -36,9 +36,9 @@ player_name_list =df_player_info['PLAYER_NAME'].unique().tolist()
 df_team_names =session.table('DB_APL.SH_APL.TEAM_BUDGET').select('TEAM_NAME').to_pandas()
 team_names=df_team_names['TEAM_NAME'].unique().tolist()
 # player_name_list = [row['PLAYER_NAME'] for row in df_players_name]
-catogary_value_a=300
-catogary_value_b=200
-catogary_value_c=100
+catogary_value_a=700
+catogary_value_b=500
+catogary_value_c=300
 #st.write(team_names)
 if not player_name_list:
     st.error("Category players are completed")
