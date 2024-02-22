@@ -1,11 +1,11 @@
 import streamlit as st
-import time
+#import time
 from snowflake.snowpark import Session
 from config import snowflake_config
 from snowflake.snowpark.functions import col
 from config import snowflake_config
 import random 
-from streamlit_modal import Modal
+#from streamlit_modal import Modal
 
 
 session = Session.builder.configs(snowflake_config).create()
