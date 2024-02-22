@@ -1,8 +1,8 @@
 snowflake_config = {
-"account" : "yn74187",
+"account" : "zf58105",
 "region" : "central-india.azure",
 "user" : "SAICHARAN11",
-"password" : "Saicharan@1101",
+"password" : "Mad@2022",
 "database" : "DB_APL",
 "db_schema" : "SH_APL"
 }
