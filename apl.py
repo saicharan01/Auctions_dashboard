@@ -21,8 +21,7 @@ desired_value2 = value2['SUM(AMOUNT_LEFT)'].iloc[0]
 value3=team3_count.agg("AMOUNT_LEFT","sum").to_pandas()
 desired_value3 = value3['SUM(AMOUNT_LEFT)'].iloc[0]
 
-#value4=team4_count.agg("AMOUNT_LEFT","sum").to_pandas()
-#desired_value4 = value4['SUM(AMOUNT_LEFT)'].iloc[0]
+
 
 
 
@@ -132,6 +131,13 @@ else:
             session.sql(query_delete).collect()
             to_team=None
             to_amount=None
+            value1=team1_count.agg("AMOUNT_LEFT","sum").to_pandas()
+            desired_value1 = value1['SUM(AMOUNT_LEFT)'].iloc[0]
+            
+            value2=team2_count.agg("AMOUNT_LEFT","sum").to_pandas()
+            desired_value2 = value2['SUM(AMOUNT_LEFT)'].iloc[0]
+            
+            value3=team3_count.agg("AMOUNT_LEFT","sum").to_pandas()
+            desired_value3 = value3['SUM(AMOUNT_LEFT)'].iloc[0]
             st.success("{to_team} bought {player_name} ,Congratulations")
-            st.rerun()
             
