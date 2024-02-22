@@ -10,7 +10,7 @@ selected_category = st.sidebar.selectbox("Please Pick the category", ["A", "B", 
 team1_count=session.table('DB_APL.SH_APL.TEAM1')
 team2_count=session.table('DB_APL.SH_APL.TEAM2')
 team3_count=session.table('DB_APL.SH_APL.TEAM3')
-team4_count=session.table('DB_APL.SH_APL.TEAM4')
+#team4_count=session.table('DB_APL.SH_APL.TEAM4')
 
 value1=team1_count.agg("AMOUNT_LEFT","sum").to_pandas()
 desired_value1 = value1['SUM(AMOUNT_LEFT)'].iloc[0]
@@ -21,8 +21,8 @@ desired_value2 = value2['SUM(AMOUNT_LEFT)'].iloc[0]
 value3=team3_count.agg("AMOUNT_LEFT","sum").to_pandas()
 desired_value3 = value3['SUM(AMOUNT_LEFT)'].iloc[0]
 
-value4=team4_count.agg("AMOUNT_LEFT","sum").to_pandas()
-desired_value4 = value4['SUM(AMOUNT_LEFT)'].iloc[0]
+#value4=team4_count.agg("AMOUNT_LEFT","sum").to_pandas()
+#desired_value4 = value4['SUM(AMOUNT_LEFT)'].iloc[0]
 
 
 
@@ -56,7 +56,7 @@ else:
 
         # with col4:
         #     st.success(f" TEAM4   \n    Player Bought: {team4_count.count()}\n   Budget left: {10000 - desired_value4}")
-        col1, col2, col3, col4 = st.columns(4)
+        col1, col2, col3= st.columns(3)
 
         with col1:
             st.info(f" TEAM1   \n    Player Bought: {team1_count.count()}\n  Budget left: {10000 - desired_value1}")
@@ -67,12 +67,12 @@ else:
         with col3:
             st.warning(f" TEAM3   \n    Player Bought: {team3_count.count()}\n  Budget left: {10000 - desired_value3}")
 
-        with col4:
-            # st.markdown(
-            #     f"<div style='color: #ffcc00;'> TEAM4   <br> Player Bought: {team4_count.count()}<br> Budget left: {10000 - desired_value4}</div>",
-            #     unsafe_allow_html=True
-            # )
-            st.success(f" TEAM4   \n    Player Bought: {team4_count.count()}\n   Budget left: {10000 - desired_value4}")
+        # with col4:
+        #     # st.markdown(
+        #     #     f"<div style='color: #ffcc00;'> TEAM4   <br> Player Bought: {team4_count.count()}<br> Budget left: {10000 - desired_value4}</div>",
+        #     #     unsafe_allow_html=True
+        #     # )
+        #     st.success(f" TEAM4   \n    Player Bought: {team4_count.count()}\n   Budget left: {10000 - desired_value4}")
 
         random_name=random.choice(player_name_list)
         current_player=df_player_info[df_player_info['PLAYER_NAME']==random_name]
