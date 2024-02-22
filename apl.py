@@ -129,8 +129,6 @@ else:
             query_delete=f"delete from DB_APL.SH_APL.PLAYERS_INFO where player_name='{random_name}'"
             session.sql(query_insert).collect()
             session.sql(query_delete).collect()
-            to_team=None
-            to_amount=None
             value1=team1_count.agg("AMOUNT_LEFT","sum").to_pandas()
             desired_value1 = value1['SUM(AMOUNT_LEFT)'].iloc[0]
             
