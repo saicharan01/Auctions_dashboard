@@ -121,7 +121,7 @@ if page=='captains Information':
         
         st.dataframe(cap_info[['PLAYER_NAME','PROFILE',]])
 if page=='Team Information':
-        team1 = session.table('DB_APL.SH_APL.STREAMING_EAGLES')
+        team1 = session.table('DB_APL.SH_APL.SCREAMING_EAGLES')
         team2 = session.table('DB_APL.SH_APL.GRAY_PANTHERS')
         team3 = session.table('DB_APL.SH_APL.POWER_GLADIATORS')
 
