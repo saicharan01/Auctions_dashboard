@@ -49,13 +49,13 @@ if page=="Buy Players":
 
             col1, col2, col3 = st.columns(3)
             with col1:
-                        st.info(f"Screaming Eagles   \n    Player Bought: {team1_count.count()}        \n              Budget left: {10000 - desired_value1}")
+                        st.info(f"Screaming Eagles   \n    Player Bought: {team1_count.count()}        \n              Budget left: {15000 - desired_value1}")
 
             with col2:
-                        st.error(f"Gray Panthers   \n    Player Bought: {team2_count.count()}        \n               Budget left: {10000 - desired_value2}")
+                        st.error(f"Gray Panthers   \n    Player Bought: {team2_count.count()}        \n               Budget left: {15000 - desired_value2}")
 
             with col3:
-                        st.warning(f"Power Gladiators  \n    Player Bought: {team3_count.count()}        \n              Budget left: {10000 - desired_value3}")
+                        st.warning(f"Power Gladiators  \n    Player Bought: {team3_count.count()}        \n              Budget left: {15000 - desired_value3}")
 
 
             current_player = df_player_info[df_player_info['PLAYER_NO'] == 1]
