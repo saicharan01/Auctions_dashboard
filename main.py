@@ -125,7 +125,7 @@ if page=='Team Information':
         team2 = session.table('DB_APL.SH_APL.GRAY_PANTHERS')
         team3 = session.table('DB_APL.SH_APL.POWER_GLADIATORS')
 
-        if st.button("STREAMING_EAGLES"):
+        if st.button("SCREAMING_EAGLES"):
               st.dataframe(team1)
         if st.button("GRAY_PANTHERS"):
               st.dataframe(team2)
