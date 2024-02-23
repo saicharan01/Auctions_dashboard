@@ -10,7 +10,7 @@ import time
 
 session = Session.builder.configs(snowflake_config).create()
 selected_category = st.sidebar.selectbox("Please Pick the category",options =["A", "B", "C"],index=None )
-team1_count = session.table('DB_APL.SH_APL.STREAMING_EAGLES')
+team1_count = session.table('DB_APL.SH_APL.SCREAMING_EAGLES')
 team2_count = session.table('DB_APL.SH_APL.GRAY_PANTHERS')
 team3_count = session.table('DB_APL.SH_APL.POWER_GLADIATORS')
 df_player_info = session.table('DB_APL.SH_APL.PLAYERS_INFO').filter(col("category") == selected_category).to_pandas()
