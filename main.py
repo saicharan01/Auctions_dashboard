@@ -41,22 +41,23 @@ team_names = df_team_names['TEAM_NAME'].unique().tolist()
 
 if page=="Buy Players":
     st.sidebar.table(df_player_info[['PLAYER_NAME', 'PROFILE']])
+    col1, col2, col3 = st.columns(3)
+    with col1:
+                        st.info(f"Screaming Eagles   \n    Player Bought: {team1_count.count()}        \n              Budget left: {15000 - desired_value1}")
+
+    with col2:
+                        st.error(f"Gray Panthers   \n    Player Bought: {team2_count.count()}        \n               Budget left: {15000 - desired_value2}")
+
+    with col3:
+                        st.warning(f"Power Gladiators  \n    Player Bought: {team3_count.count()}        \n              Budget left: {15000 - desired_value3}")
+
     if not player_name_list:
         st.error("Please choose category ")
     else:
         with st.form("New Player", clear_on_submit=True):
 
 
-            col1, col2, col3 = st.columns(3)
-            with col1:
-                        st.info(f"Screaming Eagles   \n    Player Bought: {team1_count.count()}        \n              Budget left: {15000 - desired_value1}")
-
-            with col2:
-                        st.error(f"Gray Panthers   \n    Player Bought: {team2_count.count()}        \n               Budget left: {15000 - desired_value2}")
-
-            with col3:
-                        st.warning(f"Power Gladiators  \n    Player Bought: {team3_count.count()}        \n              Budget left: {15000 - desired_value3}")
-
+            
 
             current_player = df_player_info[df_player_info['PLAYER_NO'] == 1]
             
